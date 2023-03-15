@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>How-To-Valorant</ion-title>
+
+<div id="butung">
+  <ion-button  color="danger"  (click)="openToast()">Save Data</ion-button>
+  </div>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content color="light">
+
+
+
+  <ion-button color="danger" [routerLink]="['/news']" expand="block">News</ion-button>
+
+  <div>
+    <img src="assets/icon/News.jpg">
+  </div>
+  <ion-button color="danger" [routerLink]="['/agents']" expand="block">Agents</ion-button>
+  <div>
+    <img src="assets/icon/Group_Alpha.png">
+  </div>
+
+  <ion-button color="danger" [routerLink]="['/maps']" expand="block">Maps</ion-button>
+  <div>
+    <img src="assets/icon/maps2.png">
+  </div>
+
+
+
+
+
+
+</ion-content>

@@ -1,0 +1,29 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content>
+        <ion-list id="inbox-list">
+          <ion-list-header>How-To-Valorant</ion-list-header>
+          <ion-note>Marmanil Studios</ion-note><br>
+          <ion-button color="warning" expand="block">Buy Premium</ion-button><br><br>
+          <ion-button color="danger" [routerLink]="['/agents']" expand="block">Agents</ion-button><br>
+          <ion-button color="danger" [routerLink]="['/news']" expand="block">News</ion-button><br>
+          <ion-button color="danger" [routerLink]="['/maps']" expand="block">Maps</ion-button><br>
+          <ion-button color="light" [routerLink]="['/sign-in']" expand="block">Logout</ion-button><br>
+          <ion-button color="light" [routerLink]="['/dashboard']" expand="block">Dashboard</ion-button><br>
+
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+        </ion-list>
+
+
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

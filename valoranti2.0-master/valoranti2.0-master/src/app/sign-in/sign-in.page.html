@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+    </ion-buttons>
+    <ion-title>Sign-in</ion-title>
+  </ion-toolbar>
+</ion-header>
+<div class="displayTable">
+  <div class="displayTableCell">
+    <div class="authBlock">
+      <div class="formGroup">
+        <img  src="assets/icon/valorant.jpeg" width="300">
+        <input
+          type="text"
+          class="formControl"
+          placeholder="Username"
+          #userName
+          required
+        />
+      </div>
+      <div class="formGroup">
+        <input
+          type="password"
+          class="formControl"
+          placeholder="Password"
+          #userPassword
+          required
+        />
+      </div>
+      <!-- Aufruf von Sign-in Api vom AuthService -->
+      <ion-button color="danger">
+      <div class="formGroup">
+        <input
+          type="button"
+          class="btn btnPrimary"
+          value="Log in"
+          (click)="authService.SignIn(userName.value, userPassword.value)"
+        />
+      </div>
+    </ion-button>
+      <div class="formGroup"><br>
+       <br> <span class="or"><span class="orInner">Or</span></span><br>
+      </div>
+      <!-- Aufrufen GoogleAuth Api vom AuthService -->
+      <div class="formGroup">
+        <button
+          type="button"
+          class="btn googleBtn"
+          (click)="authService.GoogleAuth()"
+        >
+          <i class="fab fa-google-plus-g"></i>
+          Log in with Google
+        </button>
+      </div>
+      <div class="forgotPassword">
+        <span routerLink="/forgot-password">Forgot Password?</span>
+      </div>
+    </div>
+    <div class="redirectToLogin">
+      <span
+        >Don't have an account?<a [routerLink]="['/sign-up']"> Sign Up</a></span
+      >
+    </div>
+  </div>
+</div>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>sign-in</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> </ion-content>
